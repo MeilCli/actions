@@ -1,7 +1,7 @@
 # actions
 created actions by me
 
-## Lint
+## Code Review
 - [danger-action](https://github.com/MeilCli/danger-action)
   - JavaScript based running danger action for GitHub Actions.
 
