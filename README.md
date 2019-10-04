@@ -1,6 +1,10 @@
 # actions
 created actions by me
 
+## Build Environment
+- [setup-crystal-action](https://github.com/MeilCli/setup-crystal-action)
+  - JavaScript based setup Crystal action for GitHub Actions.
+
 ## Code Review
 - [danger-action](https://github.com/MeilCli/danger-action)
   - JavaScript based running danger action for GitHub Actions.
@@ -18,11 +22,16 @@ created actions by me
   - JavaScript based SwiftPM new package version check action for GitHub Actions.
 - [carthage-update-check-action](https://github.com/MeilCli/carthage-update-check-action)
   - JavaScript based Carthage new package version check action for GitHub Actions.
-  
+
+## Developing actions
+- [test-command-action](https://github.com/MeilCli/test-command-action)
+  - JavaScript based testing command action for GitHub Actions.
+
 # workflows
 created workflows by me(these are for my usage)
 
 ## Creating Action
+- [setup-crystal-action](https://github.com/MeilCli/setup-crystal-action)
 - [danger-action](https://github.com/MeilCli/danger-action)
 - [npm-update-check-action](https://github.com/MeilCli/npm-update-check-action)
 - [nuget-update-check-action](https://github.com/MeilCli/nuget-update-check-action)
@@ -33,6 +42,7 @@ created workflows by me(these are for my usage)
 - [swiftpm-update-check-action-example](https://github.com/MeilCli/swiftpm-update-check-action-example)
 - [carthage-update-check-action](https://github.com/MeilCli/carthage-update-check-action)
 - [carthage-update-check-action-example](https://github.com/MeilCli/carthage-update-check-action-example)
+- [test-command-action](https://github.com/MeilCli/test-command-action)
 
 ## Creating C# Library
 - [DetectionCore](https://github.com/MeilCli/DetectionCore)
