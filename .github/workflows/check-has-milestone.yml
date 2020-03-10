@@ -10,6 +10,10 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
       - uses: octokit/request-action@v2.x
         name: Check Issue Opened
         if: github.event_name == 'issues' && github.event.action == 'opened'
