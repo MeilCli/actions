@@ -16,7 +16,7 @@ jobs:
         run: echo "$GITHUB_CONTEXT"
       - uses: octokit/request-action@v2.x
         name: Check Issue Opened
-        if: github.event_name == 'issues' && github.event.action == 'opened'
+        if: github.event_name == 'issues' && github.event.action == 'opened' && github.event.issue.milestone == null
         with:
           route: POST /repos/:repository/issues/:issue_number/comments
           repository: ${{ github.repository }}
@@ -36,7 +36,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: octokit/request-action@v2.x
         name: Check PR Opened
-        if: github.event_name == 'pull_request' && github.event.action == 'opened'
+        if: github.event_name == 'pull_request' && github.event.action == 'opened' && github.event.pull_request.milestone == null
         with:
           route: POST /repos/:repository/pulls/:pull_number/reviews
           repository: ${{ github.repository }}
