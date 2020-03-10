@@ -47,7 +47,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: octokit/request-action@v2.x
         name: Check PR Demilestoned
-        if: github.event_name == 'pull_request' && github.event.action == 'demilestoned' && github.event.issue.pull_request != null
+        if: github.event_name == 'issues' && github.event.action == 'demilestoned' && github.event.issue.pull_request != null
         with:
           route: POST /repos/:repository/pulls/:pull_number/reviews
           repository: ${{ github.repository }}
