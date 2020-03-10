@@ -1,0 +1,54 @@
+name: Check-Has-Milestone
+
+on:
+  issues:
+    types: [opened, demilestoned]
+  pull_request:
+    types: [opened]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: octokit/request-action@v2.x
+        name: Check Issue Opened
+        if: github.event_name == "issues" && github.event.action == "opened"
+        with:
+          route: POST /repos/:repository/issues/:issue_number/comments
+          repository: ${{ github.repository }}
+          issue_number: ${{ github.event.issue.number }}
+          body: "Issue must have milestone when open"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: octokit/request-action@v2.x
+        name: Check Issue Demilestoned
+        if: github.event_name == "issues" && github.event.action == "demilestoned" && github.event.issue.pull_request == null
+        with:
+          route: POST /repos/:repository/issues/:issue_number/comments
+          repository: ${{ github.repository }}
+          issue_number: ${{ github.event.issue.number }}
+          body: "Issue must have milestone"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: octokit/request-action@v2.x
+        name: Check PR Opened
+        if: github.event_name == "pull_request" && github.event.action == "opened"
+        with:
+          route: POST /repos/:repository/pulls/:pull_number/reviews
+          repository: ${{ github.repository }}
+          pull_number: ${{ github.event.pull_request.number }}
+          event: "COMMENT"
+          body: "PR must have milestone when open"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: octokit/request-action@v2.x
+        name: Check PR Demilestoned
+        if: github.event_name == "pull_request" && github.event.action == "demilestoned" && github.event.issue.pull_request != null
+        with:
+          route: POST /repos/:repository/pulls/:pull_number/reviews
+          repository: ${{ github.repository }}
+          pull_number: ${{ github.event.issue.number }}
+          event: "COMMENT"
+          body: "PR must have milestone"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
