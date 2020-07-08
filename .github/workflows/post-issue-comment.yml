@@ -1,0 +1,25 @@
+name: Post-Issue-Comment
+
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: octokit/request-action@v2.x
+        name: Post comment if mentioned
+        if: startsWith(github.event.issue.comment.body, '@github-bot')
+        with:
+          route: POST /repos/:repository/issues/:issue_number/comments
+          repository: ${{ github.repository }}
+          issue_number: ${{ github.event.issue.number }}
+          body: |
+            :bangbang: Test Bang
+            :white_check_mark: Test Check
+            - A
+            - B
+            - C
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
