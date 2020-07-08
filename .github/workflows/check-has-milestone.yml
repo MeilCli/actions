@@ -11,6 +11,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: octokit/request-action@v2.x
+        name: Get Issue
+        if: github.event_name == 'issues' && github.event.action == 'demilestoned'
+        id: get_issue
+        with:
+          route: GET /repos/:repository/issues/:issue_number
+          repository: ${{ github.repository }}
+          issue_number: ${{ github.event.issue.number }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: octokit/request-action@v2.x
         name: Check Issue Opened
         if: github.event_name == 'issues' && github.event.action == 'opened' && github.event.issue.milestone == null
         with:
@@ -22,7 +32,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: octokit/request-action@v2.x
         name: Check Issue Demilestoned
-        if: github.event_name == 'issues' && github.event.action == 'demilestoned' && github.event.issue.pull_request == null
+        if: github.event_name == 'issues' && github.event.action == 'demilestoned' && github.event.issue.pull_request == null && fromJson(steps.get_issue.outputs.data).milestone == null
         with:
           route: POST /repos/:repository/issues/:issue_number/comments
           repository: ${{ github.repository }}
@@ -43,7 +53,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: octokit/request-action@v2.x
         name: Check PR Demilestoned
-        if: github.event_name == 'issues' && github.event.action == 'demilestoned' && github.event.issue.pull_request != null
+        if: github.event_name == 'issues' && github.event.action == 'demilestoned' && github.event.issue.pull_request != null && fromJson(steps.get_issue.outputs.data).milestone == null
         with:
           route: POST /repos/:repository/pulls/:pull_number/reviews
           repository: ${{ github.repository }}
