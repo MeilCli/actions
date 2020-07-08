@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: octokit/request-action@v2.x
         name: Post comment if mentioned
-        if: startsWith(github.event.comment.body, '@github-bot')
+        if: startsWith(github.event.comment.body, '@github-actions')
         with:
           route: POST /repos/:repository/issues/:issue_number/comments
           repository: ${{ github.repository }}
