@@ -16,7 +16,7 @@ jobs:
           repository: ${{ github.repository }}
           issue_number: ${{ github.event.issue.number }}
           body: |
-            ":heavy_exclamation_mark: Test Bang\n
+            ":interrobang: Test Bang\n
             :white_check_mark: Test Check\n
             - テスト\n
             - テスト\n
