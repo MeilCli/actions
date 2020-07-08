@@ -16,10 +16,10 @@ jobs:
           repository: ${{ github.repository }}
           issue_number: ${{ github.event.issue.number }}
           body: |
-            :bangbang: Test Bang
+            ":bangbang: Test Bang
             :white_check_mark: Test Check
              - テスト
              - テスト
-             - テスト
+             - テスト"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
