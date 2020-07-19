@@ -9,6 +9,10 @@ created actions by me
 - [danger-action](https://github.com/MeilCli/danger-action)
   - JavaScript based running danger action for GitHub Actions.
 
+## Chat
+- [slack-upload-file](https://github.com/MeilCli/slack-upload-file)
+  - upload file to slack action
+
 ## Package management
 - [npm-update-check-action](https://github.com/MeilCli/npm-update-check-action)
   - JavaScript based npm new package version check action for GitHub Actions.
@@ -43,6 +47,7 @@ created workflows by me(these are for my usage)
 - [carthage-update-check-action](https://github.com/MeilCli/carthage-update-check-action)
 - [carthage-update-check-action-example](https://github.com/MeilCli/carthage-update-check-action-example)
 - [test-command-action](https://github.com/MeilCli/test-command-action)
+- [slack-upload-file](https://github.com/MeilCli/slack-upload-file)
 
 ## Creating C# Library
 - [DetectionCore](https://github.com/MeilCli/DetectionCore)
