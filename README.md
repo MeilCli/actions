@@ -16,6 +16,8 @@ created actions by me
 ## Statistics, repository monitoring
 - [android-lint-statistics](https://github.com/MeilCli/android-lint-statistics)
   - Generate android lint statistics action
+- [detekt-statistics](https://github.com/MeilCli/detekt-statistics)
+  - Generate detekt statistics action
 
 ## Package management
 - [npm-update-check-action](https://github.com/MeilCli/npm-update-check-action)
@@ -53,6 +55,7 @@ created workflows by me(these are for my usage)
 - [test-command-action](https://github.com/MeilCli/test-command-action)
 - [slack-upload-file](https://github.com/MeilCli/slack-upload-file)
 - [android-lint-statistics](https://github.com/MeilCli/android-lint-statistics)
+- [detekt-statistics](https://github.com/MeilCli/detekt-statistics)
 
 ## Creating C# Library
 - [DetectionCore](https://github.com/MeilCli/DetectionCore)
