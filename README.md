@@ -7,7 +7,7 @@ created actions by me
 
 ## Code Review
 - [danger-action](https://github.com/MeilCli/danger-action)
-  - JavaScript based running danger action for GitHub Actions.
+  - Execute danger action for GitHub Actions.
 
 ## Chat
 - [slack-upload-file](https://github.com/MeilCli/slack-upload-file)
