@@ -25,7 +25,7 @@ created actions by me
   
 ## Package management
 - [npm-update-check-action](https://github.com/MeilCli/npm-update-check-action)
-  - JavaScript based npm new package version check action for GitHub Actions.
+  - npm new package version check action for GitHub Actions.
 - [nuget-update-check-action](https://github.com/MeilCli/nuget-update-check-action)
   - JavaScript based nuget new package version check action for GitHub Actions.
 - [gradle-update-check-action](https://github.com/MeilCli/gradle-update-check-action)
