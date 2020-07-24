@@ -19,6 +19,10 @@ created actions by me
 - [detekt-statistics](https://github.com/MeilCli/detekt-statistics)
   - Generate detekt statistics action
 
+## Release management
+- [bump-release-action](https://github.com/MeilCli/bump-release-action)
+  - Bump version and publish release action
+  
 ## Package management
 - [npm-update-check-action](https://github.com/MeilCli/npm-update-check-action)
   - JavaScript based npm new package version check action for GitHub Actions.
@@ -56,6 +60,7 @@ created workflows by me(these are for my usage)
 - [slack-upload-file](https://github.com/MeilCli/slack-upload-file)
 - [android-lint-statistics](https://github.com/MeilCli/android-lint-statistics)
 - [detekt-statistics](https://github.com/MeilCli/detekt-statistics)
+- [bump-release-action](https://github.com/MeilCli/bump-release-action)
 
 ## Creating C# Library
 - [DetectionCore](https://github.com/MeilCli/DetectionCore)
