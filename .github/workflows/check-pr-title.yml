@@ -4,7 +4,7 @@ on:
   pull_request:
     types: [opened, edited, reopened]
 jobs:
-  build:
+  check:
     runs-on: ubuntu-latest
     steps:
       - uses: MeilCli/regex-match@master
@@ -24,4 +24,5 @@ jobs:
           name: 'Check/Title'
           output_title: 'Check Title'
           output_surmmary: 'Check Title of pull request'
-          result: ${{ steps.success.outputs.result }}${{ steps.failure.outputs.result }}
+          result: 'success'
+          #result: ${{ steps.success.outputs.result }}${{ steps.failure.outputs.result }}
