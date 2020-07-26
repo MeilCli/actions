@@ -2,7 +2,7 @@ name: 'Check-Title'
 
 on:
   pull_request:
-
+    types: [opened, edited, reopened]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -24,4 +24,4 @@ jobs:
           name: 'Check/Title'
           output_title: 'Check Title'
           output_surmmary: 'Check Title of pull request'
-          result: ${{ steps.success.outputs.result + steps.failure.outputs.result }}
+          result: ${{ steps.success.outputs.result }}${{ steps.failure.outputs.result }}
