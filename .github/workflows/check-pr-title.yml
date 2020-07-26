@@ -22,7 +22,6 @@ jobs:
       - uses: MeilCli/check-run-auto@master
         with:
           name: 'Check/Title'
-          sha: ${{ github.event.pull_request.head.sha }}
-          output_title: 'Check Title'
+          output_title: 'Check Title Result'
           output_surmmary: 'Check Title of pull request'
           result: ${{ steps.success.outputs.result }}${{ steps.failure.outputs.result }}
