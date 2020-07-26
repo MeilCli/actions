@@ -1,0 +1,27 @@
+name: 'Check-Title'
+
+on:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: MeilCli/regex-match@master
+        id: regex
+        with:
+          regex_pattern: 'test: .*'
+          regex_option: 'g'
+          search_string: ${{ github.event.pull_request.title }}
+      - id: success
+        if: steps.regex.outputs.matched == 'true'
+        run: echo "::set-output name=result::success"
+      - id: failure
+        if: steps.regex.outputs.matched != 'true'
+        run: echo "::set-output name=result::failure"
+      - uses: MeilCli/check-run-auto@master
+        with:
+          name: 'Check/Title'
+          output_title: 'Check Title'
+          output_surmmary: 'Check Title of pull request'
+          result: ${{ steps.success.outputs.result + steps.failure.outputs.result }}
