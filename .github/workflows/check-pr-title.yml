@@ -7,6 +7,12 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
+      - name: Generate token
+        id: generate_token
+        uses: tibdex/github-app-token@v1
+        with:
+          app_id: ${{ secrets.APP_ID }}
+          private_key: ${{ secrets.APP_PRIVATE_KEY }}
       - uses: MeilCli/regex-match@master
         id: regex
         with:
@@ -21,6 +27,7 @@ jobs:
         run: echo "::set-output name=result::failure"
       - uses: MeilCli/check-run-auto@master
         with:
+          github_token: ${{ steps.generate_token.outputs.token }}
           name: 'Check/Title'
           output_title: 'Check Title Result'
           output_surmmary: 'Check Title of pull request'
