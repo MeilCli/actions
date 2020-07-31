@@ -31,7 +31,7 @@ created actions by me
 - [gradle-update-check-action](https://github.com/MeilCli/gradle-update-check-action)
   - gradle maven new package version check action for GitHub Actions.
 - [cocoapods-update-check-action](https://github.com/MeilCli/cocoapods-update-check-action)
-  - JavaScript based CocoaPods new package version check action for GitHub Actions.
+  - CocoaPods new package version check action for GitHub Actions.
 - [swiftpm-update-check-action](https://github.com/MeilCli/swiftpm-update-check-action)
   - JavaScript based SwiftPM new package version check action for GitHub Actions.
 - [carthage-update-check-action](https://github.com/MeilCli/carthage-update-check-action)
