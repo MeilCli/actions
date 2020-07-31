@@ -39,7 +39,7 @@ created actions by me
 
 ## Developing actions
 - [test-command-action](https://github.com/MeilCli/test-command-action)
-  - JavaScript based testing command action for GitHub Actions.
+  - testing command action for GitHub Actions.
 
 # workflows
 created workflows by me(these are for my usage)
