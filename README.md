@@ -33,7 +33,7 @@ created actions by me
 - [cocoapods-update-check-action](https://github.com/MeilCli/cocoapods-update-check-action)
   - CocoaPods new package version check action for GitHub Actions.
 - [swiftpm-update-check-action](https://github.com/MeilCli/swiftpm-update-check-action)
-  - JavaScript based SwiftPM new package version check action for GitHub Actions.
+  - SwiftPM new package version check action for GitHub Actions.
 - [carthage-update-check-action](https://github.com/MeilCli/carthage-update-check-action)
   - JavaScript based Carthage new package version check action for GitHub Actions.
 
