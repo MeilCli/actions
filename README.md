@@ -35,7 +35,7 @@ created actions by me
 - [swiftpm-update-check-action](https://github.com/MeilCli/swiftpm-update-check-action)
   - SwiftPM new package version check action for GitHub Actions.
 - [carthage-update-check-action](https://github.com/MeilCli/carthage-update-check-action)
-  - JavaScript based Carthage new package version check action for GitHub Actions.
+  - Carthage new package version check action for GitHub Actions.
 
 ## Developing actions
 - [test-command-action](https://github.com/MeilCli/test-command-action)
