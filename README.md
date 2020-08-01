@@ -3,7 +3,7 @@ created actions by me
 
 ## Build Environment
 - [setup-crystal-action](https://github.com/MeilCli/setup-crystal-action)
-  - JavaScript based setup Crystal action for GitHub Actions.
+  - setup Crystal action for GitHub Actions.
 
 ## Code Review
 - [danger-action](https://github.com/MeilCli/danger-action)
