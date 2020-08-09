@@ -37,6 +37,10 @@ created actions by me
 - [carthage-update-check-action](https://github.com/MeilCli/carthage-update-check-action)
   - Carthage new package version check action for GitHub Actions.
 
+## Utils
+- [regex-match](https://github.com/MeilCli/regex-match)
+  - regex match action
+
 ## Developing actions
 - [test-command-action](https://github.com/MeilCli/test-command-action)
   - testing command action for GitHub Actions.
@@ -61,6 +65,7 @@ created workflows by me(these are for my usage)
 - [android-lint-statistics](https://github.com/MeilCli/android-lint-statistics)
 - [detekt-statistics](https://github.com/MeilCli/detekt-statistics)
 - [bump-release-action](https://github.com/MeilCli/bump-release-action)
+- [regex-match](https://github.com/MeilCli/regex-match)
 
 ## Creating C# Library
 - [DetectionCore](https://github.com/MeilCli/DetectionCore)
