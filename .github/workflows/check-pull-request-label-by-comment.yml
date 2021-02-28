@@ -1,0 +1,53 @@
+name: 'Check-Pull-Request-Label-By-Comment'
+
+on:
+  issues:
+    types: [labeled, unlabeled]
+  pull_request:
+    types: [opened]
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: octokit/request-action@v2.x
+        if: github.event_name == 'issues'
+        name: Get Issue
+        id: get_issue
+        with:
+          route: GET /repos/:repository/issues/:issue_number
+          repository: ${{ github.repository }}
+          issue_number: ${{ github.event.issue.number }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: MeilCli/hidable-comment-action@v1
+        if: github.event_name == 'issues'
+        with:
+          number: ${{ github.event.issue.number }}
+          show: ${{ contains(fromJson(steps.get_issue.outputs.data).labels.*.name, 'documentation') == false }}
+          id: 'label-lint'
+          body: |
+            label lint
+            - test1
+            - test2
+            - test3
+      - uses: octokit/request-action@v2.x
+        if: github.event_name == 'pull_request'
+        name: Get PullRequest
+        id: get_pr
+        with:
+          route: GET /repos/:repository/issues/:issue_number
+          repository: ${{ github.repository }}
+          issue_number: ${{ github.event.pull_request.number }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: MeilCli/hidable-comment-action@v1
+        if: github.event_name == 'pull_request'
+        with:
+          number: ${{ github.event.pull_request.number }}
+          show: ${{ contains(fromJson(steps.get_pr.outputs.data).labels.*.name, 'documentation') == false }}
+          id: 'label-lint'
+          body: |
+            label lint
+            - test1
+            - test2
+            - test3
