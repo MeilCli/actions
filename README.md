@@ -1,5 +1,6 @@
 # actions
 created actions by me
+test
 
 ## Build Environment
 - [setup-crystal-action](https://github.com/MeilCli/setup-crystal-action)
