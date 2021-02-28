@@ -19,7 +19,7 @@ jobs:
           show: ${{ steps.regex.outputs.matched == 'false' }}
           id: 'title-lint'
           body: |
-            "title lint\n
-            - test1\n
-            - test2\n
-            - test3"
+            title lint
+            - test1
+            - test2
+            - test3
