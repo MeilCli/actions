@@ -18,4 +18,8 @@ jobs:
           number: ${{ github.event.issue.number }}
           show: ${{ steps.regex.outputs.matched == 'false' }}
           id: 'title-lint'
-          body: 'title lint  \r\n- test1\r\n- test2\r\n- test3'
+          body: |
+            "title lint\n
+            - test1\n
+            - test2\n
+            - test3"
