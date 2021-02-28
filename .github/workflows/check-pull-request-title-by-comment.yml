@@ -1,0 +1,26 @@
+
+name: 'Check-Pull-Request-Title-By-Comment'
+
+on:
+  pull_request:
+    types: [opened, edited, reopened]
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: MeilCli/regex-match@master
+        id: regex
+        with:
+          regex_pattern: 'test: .*'
+          regex_option: 'g'
+          search_string: ${{ github.event.pull_request.title }}
+      - uses: MeilCli/hidable-comment-action@master
+        with:
+          number: ${{ github.event.pull_request.number }}
+          show: ${{ steps.regex.outputs.matched == 'false' }}
+          id: 'title-lint'
+          body: |
+            title lint
+            - test1
+            - test2
+            - test3
