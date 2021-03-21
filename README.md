@@ -1,6 +1,6 @@
 # actions
 created actions by me
-t
+tt
 ## Build Environment
 - [setup-crystal-action](https://github.com/MeilCli/setup-crystal-action)
   - setup Crystal action for GitHub Actions.
