@@ -1,0 +1,12 @@
+name: 'Dump Workflow run'
+
+on:
+  workflow_run:
+    workflows: ["Check-Title"]
+    types: 
+      - completed
+jobs:
+  dump:
+    runs-on: ubuntu-latest
+    steps:
+      - run: cat $GITHUB_EVENT_PATH
