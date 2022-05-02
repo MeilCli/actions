@@ -13,5 +13,5 @@ jobs:
           regex_pattern: 'test: ([a-z]{1,10})([0-9])'
           search_string: 'test: abc9'
       - run: echo 'group1 $group1'
-        with:
+        env:
           group1: ${{ fromJSON(steps.regex.outputs.matched_json)[1] }}
