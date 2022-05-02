@@ -4,7 +4,7 @@ name: 'Example regex match'
 on:
   workflow_dispatch:
 jobs:
-  check:
+  example:
     runs-on: ubuntu-latest
     steps:
       - uses: MeilCli/regex-match@master
@@ -12,6 +12,6 @@ jobs:
         with:
           regex_pattern: 'test: ([a-z]{1,10})([0-9])'
           search_string: 'test: abc9'
-      - run: echo 'group1 $group1'
+      - run: echo "group1=$group1"
         env:
           group1: ${{ fromJSON(steps.regex.outputs.matched_json)[1] }}
